@@ -1,7 +1,7 @@
-GET  /posts index
-GET /posts/:id show
-GET /posts/new new
-GET /posts/:id edit
-PATCH /posts/:id update
-POST /posts create
-DELETE /post/:id destroy
+GET  /flashcards        index
+GET /flashcards/:id     show
+GET /flashcards/new     new
+GET /flashcards/:id     edit
+PATCH /flashcards/:id   update
+POST /flashcards        create
+DELETE /flashcards/:id  destroy

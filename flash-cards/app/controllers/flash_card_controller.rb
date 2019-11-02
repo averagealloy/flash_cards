@@ -1,3 +1,5 @@
-class Flash_Card_Controller < ApplicationController
+class FlashCardController < ApplicationController
+
+    get '/f'
 
 end 
