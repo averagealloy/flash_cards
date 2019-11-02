@@ -5,6 +5,10 @@ class FlashCardController < ApplicationController
         erb :"flashcards/index"
     end
 
+    get '/flashcards/new'do
+      erb :"flashcards/new"
+
+    end
 
       get '/flashcards/:id' do
         @flashcards = Flashcard.find_by_id(params["id"])
