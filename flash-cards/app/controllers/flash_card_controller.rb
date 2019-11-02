@@ -6,6 +6,7 @@ class FlashCardController < ApplicationController
     end
 
     get '/flashcards/new'do
+      @users = User.all
       erb :"flashcards/new"
     end
 
@@ -15,6 +16,6 @@ class FlashCardController < ApplicationController
       end
 
       post '/post' do
-        binding.pry 
+        binding.pry
       end
 end

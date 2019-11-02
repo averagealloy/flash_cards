@@ -1,11 +1,10 @@
 <h1>this is a test</h1>
 <form method="post" action="/flashcards">
-<select name="user">
-  <option value="Mike">Mike</option>
-  <option value="James">James</option>
-  <option value="Mary">Mary</option>
-  <option value="Scooter">Scooter</option>
-  <option value="Tom">Tom</option>
+<select name="user_id">
+  <% @users.each do |user| %>
+    <option value="<%= user.id%>" <%= user.name %> </option>
+    <% end %>
+
 </select>
 
 <input type="submit">
