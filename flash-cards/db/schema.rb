@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191029184838) do
+ActiveRecord::Schema.define(version: 20191102004123) do
 
   create_table "flashcards", force: :cascade do |t|
     t.integer "user_id"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20191029184838) do
     t.string  "description"
   end
 
-  create_table "user", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
   end
