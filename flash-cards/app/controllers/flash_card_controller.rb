@@ -1,5 +1,8 @@
 class FlashCardController < ApplicationController
 
-    get '/f'
+    get '/flashcards' do 
+        @flashcards = Flashcard.all 
+        erb :"flashcards/index"
+    end 
 
 end 
