@@ -2,10 +2,12 @@
 <form method="post" action="/flashcards">
 <select name="user_id">
   <% @users.each do |user| %>
-    <option value="<%= user.id%>" <%= user.name %> </option>
+    <option value="<%= user.id%>"> <%= user.name %> </option>
     <% end %>
-
 </select>
+<input type="text" name="title">
+
+<input type="text" name="description">
 
 <input type="submit">
 </form>

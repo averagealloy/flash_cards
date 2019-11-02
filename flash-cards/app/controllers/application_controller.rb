@@ -17,13 +17,5 @@ class ApplicationController < Sinatra::Base
     erb :home
   end
 
-  post "/flashcards" do
-    
-
-
-  #   session[:card] = params[:card]
-  # @session = session
-  erb :created_flash
-end
 
 end

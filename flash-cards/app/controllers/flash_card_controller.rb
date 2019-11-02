@@ -15,7 +15,12 @@ class FlashCardController < ApplicationController
         erb :"flashcards/show"
       end
 
-      post '/post' do
-        binding.pry
+      post '/flashcards' do
+        flashcard = Flashcard.new(params)
+        if flashcard.save
+          redirect "/flashcards/#{flashcard.id}"
+        else
+          redirect "flashcard/new"
+        end
       end
 end
