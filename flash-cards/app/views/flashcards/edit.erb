@@ -1,5 +1,8 @@
-<h1>Lets do this(new)</h1>
-<form method="post" action="/flashcards">
+<h1>edit your flashcards(edit)</h1>
+<form method="post" action="/flashcards/<%= @flashcards.id %>">
+
+  <input type="hidden" id="hidden" name="_method" value="PATCH">
+
 <select name="user_id">
   <% @users.each do |user| %>
     <option value="<%= user.id%>"> <%= user.name %> </option>
