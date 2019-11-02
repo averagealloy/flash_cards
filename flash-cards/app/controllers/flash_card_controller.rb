@@ -11,7 +11,7 @@ class FlashCardController < ApplicationController
     end
 
     get '/flashcards/:id/edit' do
-      # @users = User.all
+       @users = User.all
       @flashcards = Flashcard.find_by_id(params[:id])
       erb :"/flashcards/edit"
     end
