@@ -1,6 +1,11 @@
-<!-- <h1><%= @flashcards.title %></h1>
-<p><%= @flashcards.description %></p> -->
-
-
 <h1><%= @flashcards.title %></h1>
 <p><%= @flashcards.description %></p>
+
+
+<h2>is the smester over?? let's delete this.</h2>
+<form method="post" action="flashcards/<%= @flashcards.id%>">
+  <input type="hidden" id="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+
+
+</form>

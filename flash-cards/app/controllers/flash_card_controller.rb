@@ -40,4 +40,13 @@ class FlashCardController < ApplicationController
           redirect "flashcard/new"
         end
       end
+
+
+      delete '/flashcards/:id' do
+        @flashcards = Flashcard.find_by_id(params[:id])
+        @flashcards.delete
+        redirect "/flashcards"
+      end
+
+
 end
