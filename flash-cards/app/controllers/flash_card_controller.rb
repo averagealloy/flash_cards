@@ -21,6 +21,17 @@ class FlashCardController < ApplicationController
         erb :"flashcards/show"
       end
 
+      patch '/flashcards/:id' do
+        @flashcards = Flashcard.find_by_id(params[:id])
+        params.delete("_method")
+        if @flashcards.update(params)
+          redirect "/flashcards/#{@flashcards.id}"
+        else
+          redirect "/flashcards/#{@flashcards.id}/edit"
+        end
+      end
+
+
       post '/flashcards' do
         flashcard = Flashcard.new(params)
         if flashcard.save
