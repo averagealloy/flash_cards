@@ -1,8 +1,13 @@
 class FlashCardController < ApplicationController
 
-    get '/flashcards' do 
-        @flashcards = Flashcard.all 
+    get '/flashcards' do
+        @flashcards = Flashcard.all
         erb :"flashcards/index"
-    end 
+    end
 
-end 
+
+      get '/flashcards/:id' do
+        @flashcards = Flashcard.find_by_id(params["id"])
+        erb :"flashcards/show"
+      end
+end
