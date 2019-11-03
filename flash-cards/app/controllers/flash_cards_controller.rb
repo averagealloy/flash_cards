@@ -2,7 +2,7 @@ class FlashCardsController < ApplicationController
 
     get '/flashcards' do
       if logged_in?
-        @flashcards = Flashcard.all
+        @flashcards = current_user.flashcards.all
         erb :"flashcards/index"
       else
         redirect "/login"
@@ -43,7 +43,7 @@ class FlashCardsController < ApplicationController
 
 
       post '/flashcards' do
-        flashcard = Flashcard.new(params)
+        flashcard = Flashcard.new(user_id: current_user.id, title: params[:title], description: params[:description])
         if flashcard.save
           redirect "/flashcards/#{flashcard.id}"
         else

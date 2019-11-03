@@ -1,8 +1,10 @@
 <h1><%= @flashcards.title %></h1>
 <p><%= @flashcards.description %></p>
 
+<h2><a href="/flashcards"> your flashcards</a> <br> <a href="/flashcards/<%= @flashcards.id%>/edit"> edit this card</a><h2>
 
-<h2>is the smester over?? let's delete this.</h2>
+
+<!-- <h2>is the smester over?? let's delete this.</h2> -->
 <form method="POST" action="/flashcards/<%= @flashcards.id%>" />
   <input type="hidden" id="hidden" name="_method" value="DELETE" />
   <input type="submit" value="delete" />
