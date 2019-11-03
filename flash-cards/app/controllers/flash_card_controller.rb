@@ -1,9 +1,11 @@
 class FlashCardController < ApplicationController
 
     get '/flashcards' do
-      binding.pry
+      if logged_in?
         @flashcards = Flashcard.all
         erb :"flashcards/index"
+      else redirect "/login"
+      end
     end
 
     get '/flashcards/new'do
