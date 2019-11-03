@@ -5,7 +5,7 @@ get '/login' do
 end
 
 post "/login" do
-
-end 
+user = User.find_by(name: params[:name])
+end
 
 end
