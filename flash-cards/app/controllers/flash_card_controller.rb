@@ -1,7 +1,7 @@
 class FlashCardController < ApplicationController
 
     get '/flashcards' do
-      
+      binding.pry
         @flashcards = Flashcard.all
         erb :"flashcards/index"
     end
