@@ -1,5 +1,5 @@
 <h1>Lets do this(new)</h1>
-<form method="post" action="/flashcards">
+<form method="POST" action="/flashcards">
 <select name="user_id">
   <% @users.each do |user| %>
     <option value="<%= user.id%>"> <%= user.name %> </option>

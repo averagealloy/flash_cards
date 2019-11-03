@@ -7,6 +7,6 @@ end
 
 use Rack::MethodOverride
 run ApplicationController
-use FlashCardController
+use FlashCardsController
 use SessionsController
 use UsersController
