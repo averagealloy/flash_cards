@@ -10,12 +10,14 @@ class FlashCardsController < ApplicationController
     end
 
     get '/flashcards/new'do
-      @users = User.all
+    if logged_in? 
       erb :"flashcards/new"
+    else 
+      redirect "/login"
+    end 
     end
 
     get '/flashcards/:id/edit' do
-       @users = User.all
       @flashcards = Flashcard.find_by_id(params[:id])
       if @flashcards.user.id == current_user.id
              erb :"flashcards/edit"
